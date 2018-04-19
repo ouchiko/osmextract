@@ -46,7 +46,7 @@ In theory you should now see a collection of files in ./osm which catalogue the 
 
 #### Instances
 
-Running the process for London collecting shops, amenities, wikipedia, historic, buildings, offices on a D/O server 10Vcpu, 96GB mem too from 10:09:49 PM until 10:12:51 PM. The return was a combined listing set of 97,582 items.
+Running the process for London collecting shops, amenities, wikipedia, historic, buildings, offices on a D/O server 20Vcpu, 96GB mem too from 10:09:49 PM until 10:12:51 PM. The return was a combined listing set of 97,582 items.
 
 Example of the wikipedia listing:
 
@@ -63,3 +63,11 @@ Example of the wikipedia listing:
 1000000570877952	51.5353687	-0.1744570	Jubilee Line							en:Jubilee line
 1000000572758808	51.5073889	-0.1326893	Crimean War Memorial						yes	en:Crimean War Memorial
 ```
+
+#### Future
+
+This project will expand to then run an automated reverse lookup on latitude/longitude to obtain full address details and apply this to the dataset.  Once that's complete the data will be uploaded into an S3 bucket ready for import into whatever system or process is needed for this.  
+
+Ideally, i'd hand it North America and come back mnay hours later with the data sitting in S3 without doing anything.
+
+
