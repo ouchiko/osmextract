@@ -19,7 +19,7 @@ git clone https://github.com/ouchiko/osmextract.githttps://download.geofabrik.de
 You need to build out the local server with ```docker``` and such, if you have it pre installed then you can skip this phase
 
 ```
-make directories
+apt-get update && apt-get install -y make docker.io
 make setup
 make build
 ````
