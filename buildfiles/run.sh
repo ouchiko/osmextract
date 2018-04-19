@@ -31,7 +31,7 @@ php /bin/parse_file shops.txt
 /var/osmosis/bin/osmosis --read-pbf /osm/$file --tf accept-nodes office=* --tf reject-ways --tf reject-relations --write-xml office-nodes.osm
 /var/osmosis/bin/osmosis --read-pbf /osm/$file --tf accept-ways office=* --tf reject-relations --used-node --write-xml office-ways.osm
 /var/osmosis/bin/osmosis --rx office-ways.osm --rx office-nodes.osm --merge --wx office.osm
-osmconvert -v office.osm --all-to-nodes --csv-headline --csv="@id @lat @lon name addr:housenumber addr:street addr:city addr:postcode addr:state addr:suburb addr:country addr:place building wikipedia" > office.txt
+osmconvert -v office.osm --all-to-nodes --csv-headline --csv="@id @lat @lon name addr:housenumber addr:street addr:city addr:postcode addr:state addr:suburb addr:country addr:place office wikipedia" > office.txt
 php /bin/parse_file office.txt
 
 ##########
@@ -39,7 +39,7 @@ php /bin/parse_file office.txt
 /var/osmosis/bin/osmosis --read-pbf /osm/$file --tf accept-nodes historic=* --tf reject-ways --tf reject-relations --write-xml historic-nodes.osm
 /var/osmosis/bin/osmosis --read-pbf /osm/$file --tf accept-ways historic=* --tf reject-relations --used-node --write-xml historic-ways.osm
 /var/osmosis/bin/osmosis --rx historic-ways.osm --rx historic-nodes.osm --merge --wx historic.osm
-osmconvert -v historic.osm --all-to-nodes --csv-headline --csv="@id @lat @lon name addr:housenumber addr:street addr:city addr:postcode addr:state addr:suburb addr:country addr:place building wikipedia" > historic.txt
+osmconvert -v historic.osm --all-to-nodes --csv-headline --csv="@id @lat @lon name addr:housenumber addr:street addr:city addr:postcode addr:state addr:suburb addr:country addr:place historic wikipedia" > historic.txt
 php /bin/parse_file historic.txt
 
 ##########
@@ -47,5 +47,5 @@ php /bin/parse_file historic.txt
 /var/osmosis/bin/osmosis --read-pbf /osm/$file --tf accept-nodes wikipedia=* --tf reject-ways --tf reject-relations --write-xml wikipedia-nodes.osm
 /var/osmosis/bin/osmosis --read-pbf /osm/$file --tf accept-ways wikipedia=* --tf reject-relations --used-node --write-xml wikipedia-ways.osm
 /var/osmosis/bin/osmosis --rx wikipedia-ways.osm --rx wikipedia-nodes.osm --merge --wx wikipedia.osm
-osmconvert -v wikipedia.osm --all-to-nodes --csv-headline --csv="@id @lat @lon name addr:housenumber addr:street addr:city addr:postcode addr:state addr:suburb addr:country addr:place building wikipedia" > wikipedia.txt
+osmconvert -v wikipedia.osm --all-to-nodes --csv-headline --csv="@id @lat @lon name addr:housenumber addr:street addr:city addr:postcode addr:state addr:suburb addr:country addr:place wikipedia wikipedia" > wikipedia.txt
 php /bin/parse_file wikipedia.txt
