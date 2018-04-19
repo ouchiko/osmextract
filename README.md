@@ -14,7 +14,7 @@ If you're lucky enough to have a nominetum server available you can take this da
 Once you've generated a server to use this on clone the repository
 
 ```
-git clone https://github.com/ouchiko/osmextract.githttps://download.geofabrik.de/europe/monaco-latest.cd ./osm && osm.pbf
+git clone https://github.com/ouchiko/osmextract.git
 ```
 
 #### Setup
@@ -22,7 +22,11 @@ You need to build out the local server with ```docker``` and such, if you have i
 
 ```
 apt-get update && apt-get install -y make docker.io
-make setup
+```
+
+Now build docker..
+```
+make directories
 make build
 ````
 
