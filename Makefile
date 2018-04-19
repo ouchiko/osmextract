@@ -4,8 +4,5 @@ build:
 run:
 	docker run -v ${PWD}/osm:/osm -e file=${file} osmprocess
 
-setup:
-	apt-get update && apt-get install -y make docker.io
-
 directories:
-	mkdir osm/ && chmod a+x osm/
+	mkdir ./osm && chmod a+x osm/ && mkdir ./osm/output && chmod a+x ./osm/output
