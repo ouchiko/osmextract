@@ -8,6 +8,8 @@ The primary issues with OSM data is the size and often the time it takes to proc
 
 The project uses a ```docker``` container which builds in various components which allow us to pass in and process an ```osm.pbf``` file (sources like geofabrik are great for city/country level data sets).  Within this we're running ```osmosis```, ```osmconvert``` and possibly ```osmfilter```.  
 
+If you're lucky enough to have a nominetum server available you can take this data, which is sometimes lacking address clarity, and run it through a reverse lookup.  The resulting address base, plus the item name, meta data and latitude / longitude gives you a full and usable location point within your project.
+
 #### Installation
 Once you've generated a server to use this on clone the repository
 
